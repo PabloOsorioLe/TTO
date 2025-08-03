@@ -1,0 +1,63 @@
+.productos-wrapper {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.card-formulario {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 1rem;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+
+.form-control-sm,
+.form-select-sm {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.4rem;
+  height: auto;
+}
+
+.no-resize {
+  resize: none;
+}
+
+.tabla-productos {
+  overflow-x: auto;
+  border-radius: 1rem;
+}
+
+.table th,
+.table td {
+  font-size: 0.75rem;
+  vertical-align: middle;
+  padding: 0.3rem;
+}
+
+@media (max-width: 576px) {
+  .form-label {
+    font-size: 0.7rem;
+  }
+
+  .form-control-sm,
+  .form-select-sm {
+    font-size: 0.7rem;
+  }
+
+  .table th,
+  .table td {
+    font-size: 0.7rem;
+  }
+}
+.tabla-scroll {
+  max-height: 500px; /* Antes: 300px */
+  overflow-y: auto;
+  overflow-x: auto;
+  display: block;
+}
+

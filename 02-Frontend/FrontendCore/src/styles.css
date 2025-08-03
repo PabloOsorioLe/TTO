@@ -1,0 +1,32 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  padding-top: 48px; /* ✅ O el valor exacto que ocupas (44px + 2*0.2rem ≈ 48px) */
+  height: 100%;
+  overflow: auto; /* Oculta scroll global */
+  background-color: #fafafa;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+@media (max-width: 991.98px) {
+  .navbar-collapse.show .nav-item {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: none !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .contenido-scroll {
+    padding-bottom: 120px !important; /* espacio visual para evitar corte en móviles */
+  }
+}
+@media (max-width: 576px) {
+  .scroll-wrapper {
+    padding-bottom: 120px !important; /* ⚠️ Aumentado para dejar espacio bajo último item */
+  }
+}
