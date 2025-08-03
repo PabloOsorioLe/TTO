@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.input-group-text {
+  background-color: #f1f1f1;
+}
+
+.btn {
+  font-weight: bold;
+  border-radius: 0.5rem;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: #dc3545;
+}

@@ -1,0 +1,8 @@
+<!-- app.component.html -->
+<div class="d-flex flex-column min-vh-100">
+  <app-navbar *ngIf="mostrarLayout" [tituloActual]="tituloActual"></app-navbar>
+
+<main class="content" [@fadeAnimation]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>
+</div>
