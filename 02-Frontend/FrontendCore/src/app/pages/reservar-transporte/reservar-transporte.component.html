@@ -1,0 +1,56 @@
+<div class="reserva-container">
+    <form [formGroup]="formReserva" (ngSubmit)="confirmar()">
+       <!-- ORIGEN -->
+<div class="mb-3">
+  <label for="origen" class="form-label text-white">Origen (Hotel)</label>
+  <select id="origen" class="form-select" formControlName="origen">
+    <option value="" disabled selected>Selecciona el hotel</option>
+    <option value="hotel_cumbres">Hotel Cumbres</option>
+    <option value="hotel_w">Hotel W Santiago</option>
+    <option value="hotel_marriott">Hotel Marriott</option>
+    <option value="hotel_ibis">Hotel Ibis</option>
+    <option value="hotel_altiplanico">Hotel Altiplánico</option>
+  </select>
+</div>
+
+       <!-- DESTINO -->
+<div class="mb-3">
+  <label for="destino" class="form-label text-white">Destino</label>
+  <select id="destino" class="form-select" formControlName="destino">
+    <option value="" disabled selected>Selecciona destino</option>
+    <option value="aeropuerto">Aeropuerto Arturo Merino Benítez</option>
+  </select>
+</div>
+
+        <div>
+            <label for="tipoViaje" class="form-label text-white">Tipo de Viaje</label>
+            <select id="tipoViaje" class="form-select" formControlName="tipoViaje">
+                <option value="">Selecciona...</option>
+                <option value="aeropuerto">Aeropuerto</option>
+                <option value="citytour">City Tour</option>
+                <option value="viñedos">Viñedos</option>
+                <option value="roadtrip">Road Trip</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="tipoVehiculo" class="form-label text-white">Tipo de Vehículo</label>
+            <select id="tipoVehiculo" class="form-select" formControlName="tipoVehiculo">
+                <option value="">Selecciona...</option>
+                <option value="sedan">Sedán</option>
+                <option value="suv">SUV</option>
+                <option value="van">Van</option>
+                <option value="premium">Premium</option>
+            </select>
+        </div>
+
+        <div *ngIf="tarifaFija > 0" class="tarifa-texto">
+            Tarifa Fija: {{ formatearPesos(tarifaFija) }}
+        </div>
+
+
+        <button class="confirmar-btn" type="submit" [disabled]="!formReserva.valid">
+            Confirmar y Pagar
+        </button>
+    </form>
+</div>

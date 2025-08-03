@@ -1,0 +1,101 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 1rem 1rem; /* ✅ mismo padding-top que en 'reservar transporte' */
+  width: 100%;
+  max-width: 100vw;
+  min-height: calc(100vh - 56px);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.mis-reservas-container {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: #fff;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ffd369;
+}
+
+.reserva-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #102542;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.reserva-info p {
+  margin: 0.3rem 0;
+}
+
+.acciones {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.calificacion label {
+  margin-right: 0.5rem;
+}
+
+.estrella {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s;
+}
+
+.estrella.activa {
+  color: #ffd369;
+}
+
+.repetir-btn {
+  background-color: #ffd369;
+  color: #1d1d1d;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.repetir-btn:hover {
+  background-color: #f2c94c;
+}
+
+.sin-reservas {
+  text-align: center;
+  color: #ccc;
+}
+.repetir-btn {
+  background: linear-gradient(135deg, #d4af37, #f5c84c);
+  border: none;
+  color: #1d1d1d;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.repetir-btn:hover {
+  background: linear-gradient(135deg, #f5c84c, #d4af37);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+  transform: scale(1.02);
+}

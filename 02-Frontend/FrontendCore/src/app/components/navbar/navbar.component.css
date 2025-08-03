@@ -4,22 +4,28 @@
 
 /* NAVBAR PREMIUM */
 .custom-navbar {
-  font-size: 1rem;
+  font-size: 0.92rem; /* ↓ ligeramente más pequeño */
   letter-spacing: 0.03em;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100vw;
-  height: 56px;
+  height: 48px; /* ↓ ligeramente más bajo */
   z-index: 1050;
-  background: linear-gradient(135deg, #004080, #007A5E); /* azul a verde esmeralda */
+  background: linear-gradient(
+    135deg,
+    #003366 0%,
+    #003366 70%,
+    #007A5E 100%
+  );
   display: flex;
   align-items: center;
-  padding: 0 1rem;
-  border-bottom: 3px solid #f4a300; /* dorado-naranjo */
+  padding: 0 0.8rem; /* ↓ menor espacio lateral */
+  border-bottom: 3px solid #f4a300;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
+
 
 /* BOTÓN TOGGLER */
 .navbar-toggler {
@@ -37,8 +43,17 @@
 }
 
 /* ANIMACIÓN Y RESPONSIVE */
+
+
 .navbar-collapse {
-  transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  background: linear-gradient(
+    135deg,
+    #003366 0%,
+    #003366 70%,
+    #007A5E 100%
+    
+  );
 }
 
 @media (min-width: 992px) {
@@ -52,17 +67,22 @@
   }
 
   .menu-title-mobile {
-    display: none !important;
+     font-size: 0.95rem; /* ↓ antes estaba en 1rem */
   }
 }
 
 @media (max-width: 991.98px) {
   .navbar-collapse {
     position: fixed;
-    top: 56px;
+    top: 48px;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, #004080, #007A5E);
+    background: linear-gradient(
+      135deg,
+      #003366 0%,
+      #003366 70%,
+      #007a5e 100%
+    );
     border-radius: 0 0 0.5rem 0.5rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     padding: 1rem;
@@ -71,6 +91,7 @@
     pointer-events: none;
     z-index: 1040;
   }
+
 
   .navbar-collapse.show {
     opacity: 1;

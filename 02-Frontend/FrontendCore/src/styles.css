@@ -1,18 +1,29 @@
 html, body {
   margin: 0;
   padding: 0;
-  padding-top: 48px; /* ✅ O el valor exacto que ocupas (44px + 2*0.2rem ≈ 48px) */
   height: 100%;
-  overflow: auto; /* Oculta scroll global */
-  background-color: #fafafa;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: linear-gradient(to bottom, #0b1e3d 0%, #152f57 100%);
+  color: #f0f0f0;
+  overflow-x: hidden;
+  overflow-y: hidden; 
 }
 
-app-root {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+
+
+*, *::before, *::after {
+  box-sizing: border-box;   /* ✅ Asegura que los márgenes no sumen más del 100% */
 }
+
+
+/* En la vista específica */
+:host {
+  display: block;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 2rem;
+}
+
 @media (max-width: 991.98px) {
   .navbar-collapse.show .nav-item {
     opacity: 1 !important;
