@@ -1,28 +1,46 @@
+/* =============================
+   GLOBAL RESETS Y CONFIGURACIÓN
+   ============================= */
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background: linear-gradient(to bottom, #0b1e3d 0%, #152f57 100%);
   color: #f0f0f0;
+
+  /* Importante: solo ocultar scroll horizontal */
   overflow-x: hidden;
-  overflow-y: hidden; 
+
+  /* No uses overflow-y: hidden globalmente */
 }
-
-
 
 *, *::before, *::after {
-  box-sizing: border-box;   /* ✅ Asegura que los márgenes no sumen más del 100% */
+  box-sizing: border-box;
 }
 
+/* =============================
+   CONTENEDORES PRINCIPALES
+   ============================= */
 
-/* En la vista específica */
+/* Aplica a todas las vistas */
 :host {
   display: block;
-  max-height: 100vh;
+  min-height: 100vh;           /* Asegura que siempre hay altura suficiente */
   overflow-y: auto;
   padding-bottom: 2rem;
 }
+
+/* Opcional: clase reutilizable para padding inferior en móviles */
+.scroll-wrapper {
+  padding-bottom: 120px; /* útil si hay elementos fijos */
+}
+
+/* =============================
+   MEDIA QUERIES
+   ============================= */
 
 @media (max-width: 991.98px) {
   .navbar-collapse.show .nav-item {
@@ -31,13 +49,15 @@ html, body {
     animation: none !important;
   }
 }
+
 @media (max-width: 767.98px) {
   .contenido-scroll {
-    padding-bottom: 120px !important; /* espacio visual para evitar corte en móviles */
+    padding-bottom: 120px !important;
   }
 }
+
 @media (max-width: 576px) {
   .scroll-wrapper {
-    padding-bottom: 120px !important; /* ⚠️ Aumentado para dejar espacio bajo último item */
+    padding-bottom: 120px !important;
   }
 }
