@@ -1,0 +1,29 @@
+<div class="mis-reservas-container">
+  <div *ngIf="reservas.length === 0" class="sin-reservas">
+    No tienes reservas registradas.
+  </div>
+
+  <div *ngFor="let reserva of reservas" class="reserva-card">
+    <div class="reserva-info">
+      <p><strong>Origen:</strong> {{ reserva.origen }}</p>
+      <p><strong>Destino:</strong> {{ reserva.destino }}</p>
+      <p><strong>Fecha:</strong> {{ reserva.fecha }}</p>
+      <p><strong>Tipo de Vehículo:</strong> {{ reserva.vehiculo }}</p>
+      <p><strong>Tipo de Viaje:</strong> {{ reserva.tipoViaje }}</p>
+    </div>
+
+    <div class="acciones">
+      <div class="calificacion">
+        <label>Califica:</label>
+        <ng-container *ngFor="let estrella of [1,2,3,4,5]">
+          <span class="estrella"
+                [class.activa]="reserva.calificacion >= estrella"
+                (click)="calificarReserva(reserva.id, estrella)">★</span>
+        </ng-container>
+      </div>
+
+    <button class="repetir-btn" (click)="repetirReserva(reserva)">Repetir Reserva</button>
+
+    </div>
+  </div>
+</div>

@@ -3,21 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-// Componentes principales
-import { ProductosComponent } from './pages/productos/productos.component';
-
 // Componentes reutilizables
 import { NavbarComponent } from './components/navbar/navbar.component';
 
-// ✅ FALTABA IMPORTAR LOGIN COMPONENT
-import { LoginComponent } from './auth/login/login.component'; // ajusta si está en otra ruta
+// Componentes de páginas
+import { ReservarTransporteComponent } from './pages/reservar-transporte/reservar-transporte.component';
+import { MisReservasComponent } from './pages/mis-reservas/mis-reservas.component';
+import { BotonEmergenciaComponent } from './pages/boton-emergencia/boton-emergencia.component';
+import { TourComponent } from './pages/tour/tour.component';
 
-// Servicios
-import { PublicacionService } from './services/publicacion.service'; 
+// Componentes de autenticación
+import { LoginComponent } from './auth/login/login.component';
 
 // Módulo de autenticación
 import { AuthModule } from './auth/auth.module';
@@ -37,13 +38,16 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 
 // PWA
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment'
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ProductosComponent,   // ✅ asegurarse de que esté declarado
+    ReservarTransporteComponent,
+    MisReservasComponent,
+    BotonEmergenciaComponent,
+    TourComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,7 @@ import { environment } from '../environments/environment'
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    RouterModule, // Para routerLink y routerLinkActive
 
     // Angular Material
     MatPaginatorModule,
@@ -73,9 +78,7 @@ import { environment } from '../environments/environment'
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [
-    PublicacionService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

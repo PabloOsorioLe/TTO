@@ -1,0 +1,124 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 1rem 1rem;
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+
+.reserva-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem 2rem 1rem 2rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  color: #f2f2f2;
+}
+
+
+/* Responsivo en móviles */
+@media (max-width: 575.98px) {
+  :host {
+    overflow-y: hidden;
+    height: 100vh;
+  }
+
+  html, body {
+    overflow-y: hidden;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+/* Etiquetas */
+label {
+    color: #e0e0e0;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+/* Inputs */
+input,
+select {
+    background-color: #12294d;
+    color: #ffffff;
+    border: 1px solid #446088;
+    border-radius: 6px;
+    padding: 0.6rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Botón de confirmación */
+.confirmar-btn {
+    background: linear-gradient(135deg, #f2c94c, #ffda7b);
+    border: none;
+    color: #1d1d1d;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem !important;
+    /* 🔧 más compacto */
+}
+
+.confirmar-btn:hover {
+    background: linear-gradient(135deg, #ffda7b, #f2c94c);
+    box-shadow: 0 0 10px #f2c94caa;
+    color: #000;
+}
+
+/* Tarifa */
+.tarifa-texto {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #ffe082;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo del select */
+.form-select {
+    background-color: #12294d;
+    color: #fff;
+    border: 1px solid #ffd369;
+    border-radius: 1rem;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg fill='%23ffd369' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.05);
+}
+.form-select option {
+  background-color: rgba(18, 41, 77, 0.6); /* más transparente */
+ 
+  font-weight: 500;
+  backdrop-filter: blur(3px); /* si el navegador lo permite */
+  -webkit-backdrop-filter: blur(3px);
+  border: none;
+}

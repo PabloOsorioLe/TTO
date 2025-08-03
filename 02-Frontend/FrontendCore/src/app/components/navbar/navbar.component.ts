@@ -14,6 +14,7 @@ declare var bootstrap: any;
 })
 export class NavbarComponent implements OnInit {
   @Input() tituloActual: string = '';
+  iconoActual: string = '';
   loginForm: FormGroup;
 
   constructor(
@@ -27,29 +28,31 @@ export class NavbarComponent implements OnInit {
       password: ['', Validators.required]
     });
   }
-  iconoActual: string = '';
+
   ngOnInit(): void {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         const ruta = this.router.url;
-        if (ruta.includes('/productos')) {
-          this.tituloActual = 'Productos';
-          this.iconoActual = 'bi-box-seam';
-        } else if (ruta.includes('/publicar-aviso')) {
-          this.tituloActual = 'Publicar Aviso';
-          this.iconoActual = 'bi-megaphone-fill';
-        } else if (ruta.includes('/postular-aviso')) {
-          this.tituloActual = 'Postular Aviso';
-          this.iconoActual = 'bi-send-check-fill';
+
+        if (ruta.includes('/reservar-transporte')) {
+          this.tituloActual = 'Reservar Transporte';
+          this.iconoActual = 'bi-car-front';
+        } else if (ruta.includes('/mis-reservas')) {
+          this.tituloActual = 'Mis Reservas';
+          this.iconoActual = 'bi-journal-text';
+        } else if (ruta.includes('/boton-emergencia')) {
+          this.tituloActual = 'Emergencia';
+          this.iconoActual = 'bi-exclamation-triangle-fill';
+        } else if (ruta.includes('/tour')) {
+          this.tituloActual = 'Tour';
+          this.iconoActual = 'bi-globe-americas';
         } else {
           this.tituloActual = 'Inicio';
           this.iconoActual = 'bi-house-fill';
         }
-
       });
   }
-
 
   cerrarSesion(event: Event): void {
     event.preventDefault();
@@ -100,7 +103,7 @@ export class NavbarComponent implements OnInit {
       this.authService.login(this.loginForm.value).subscribe({
         next: () => {
           bootstrap.Modal.getInstance(document.getElementById('loginModal'))?.hide();
-          this.router.navigate(['/trabajadores']);
+          this.router.navigate(['/reservar-transporte']);
         },
         error: () => {
           Swal.fire('Error', 'Credenciales incorrectas', 'error');
@@ -109,7 +112,6 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  // Cierra el menú si se hace clic fuera de él
   @HostListener('document:click', ['$event'])
   onClickOutside(event: Event): void {
     const clickedInside = this.eRef.nativeElement.contains(event.target);
